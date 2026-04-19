@@ -27,6 +27,12 @@ config.tubesToSend = {
     ["draw"] = "skylord:501_ToSendDrawer";
 }
 
+-- Basically shorter names to access frequently used stuff easily
+config.alias = {
+    ["dirt"] = "default:dirt";
+    ["mulch"] = "bonemeal:mulch";
+}
+
 config.outMsg = {
     [1] = "Bad tube channel! (Tube channel cannot be greater than " .. config["maxTubeChannels"] .. ").";
     [2] = "Bad container type. Pick 'draw' or 'chest' instead.";
@@ -104,6 +110,10 @@ function getAnItem(nameOfItem, channel, containerType)
     if spacePos then
         itemBase = string.sub(nameOfItem, 1, spacePos - 1)
         totalQty = tonumber(string.sub(nameOfItem, spacePos + 1))
+    end
+
+    if config.alias[itemBase] then
+        itemBase = config.alias[itemBase]
     end
 
     if not totalQty then
