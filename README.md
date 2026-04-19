@@ -4,8 +4,7 @@
 
 Readme.md soon to show how to setup this contraption
 
-### TODO
-## V2 (Potentially final) push
+## Todo list for V2 (Potentially final) push
 - Key : ? = Thinking
 - Make DC's take different types of items (i.e. craftitems is taken by DC1, node is taken by DC2, etc)
 - Use of mithril stuff for automatically getting stuff instead of selecting what draw has what
