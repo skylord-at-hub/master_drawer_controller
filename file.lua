@@ -31,6 +31,8 @@ config.tubesToSend = {
 config.alias = {
     ["dirt"] = "default:dirt";
     ["mulch"] = "bonemeal:mulch";
+    ["light"] = "technic:dummy_light_source";
+    ["fuel"] = "biofuel:fuel_can";
 }
 
 config.outMsg = {
@@ -320,7 +322,10 @@ end
 if event.type == "program" then
     mem.dcIndex  = 1
     mem.conIndex = 1
-    mem.logs = {}
+
+    if not mem.logs then
+        mem.logs = {}
+    end
 end
 
 if event.type == "digiline" and event.channel == "screen" then
